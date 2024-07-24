@@ -38,10 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'derivadorDeTareasApp',  #miapp
-    'crispy_forms',
-    'crispy_bootstrap4',
+#   'crispy_forms',
+#   'crispy_bootstrap4',
 ]
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+#CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,8 +57,8 @@ AUTH_USER_MODEL = 'derivadorDeTareasApp.Usuario'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'menu_principal'
+LOGIN_URL = 'inicio'
+LOGIN_REDIRECT_URL = 'menu_usuario'
 
 ROOT_URLCONF = 'derivadorDeTareas.urls'
 
@@ -116,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Argentina/Buenos_Aires'
 
 USE_I18N = True
 
@@ -133,6 +133,7 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = BASE_DIR / 'media'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 

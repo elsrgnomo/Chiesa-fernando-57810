@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
 
 {% block title %}Editar Tarea{% endblock %}
 
@@ -87,20 +86,19 @@
             </div>
         </div>
     </div>
+
+    <h3>Agregar Comentario</h3>
+    {{ comentario_form.as_p }}
     <button type="submit" class="btn btn-primary mt-3">Guardar</button>
 </form>
-{% endblock %}
 
-{% block extra_js %}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const messages = document.getElementsByClassName('alert');
-        if (messages.length > 0) {
-            setTimeout(() => {
-                messages[0].remove();
-            }, 3000);
-            alert(messages[0].innerText);
-        }
-    });
-</script>
+<h3 class="mt-4">Comentarios</h3>
+<ul class="list-group">
+    {% for comentario in comentarios %}
+        <li class="list-group-item">
+            <p>{{ comentario.comentario }}</p>
+            <small>Por {{ comentario.usuario.nombre }} {{ comentario.usuario.apellido }} el {{ comentario.fecha }}</small>
+        </li>
+    {% endfor %}
+</ul>
 {% endblock %}

@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
 
 {% block title %}Crear Tarea{% endblock %}
 
@@ -89,18 +88,4 @@
     </div>
     <button type="submit" class="btn btn-primary mt-3">Guardar</button>
 </form>
-{% endblock %}
-
-{% block extra_js %}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const messages = document.getElementsByClassName('alert');
-        if (messages.length > 0) {
-            setTimeout(() => {
-                messages[0].remove();
-            }, 3000);
-            alert(messages[0].innerText);
-        }
-    });
-</script>
 {% endblock %}

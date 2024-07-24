@@ -2,6 +2,11 @@
 
 {% block title %}Lista de Usuarios{% endblock %}
 
+{% block breadcrumb %}
+<a href="{% if user.is_superuser %}{% url 'menu_admin' %}{% else %}{% url 'menu_usuario' %}{% endif %}" class="breadcrumb-item">Menú</a>
+<span class="breadcrumb-item active">Lista de Usuarios</span>
+{% endblock %}
+
 {% block header %}
 <div class="m-4 m-lg-5">
     <h2 class="display-5 fw-bold">Lista de Usuarios</h2>
@@ -9,9 +14,38 @@
 {% endblock %}
 
 {% block content %}
-<ul class="list-group">
-    {% for usuario in usuarios %}
-        <li class="list-group-item"><a href="{% url 'detalle_usuario' usuario.pk %}">{{ usuario.nombre }} {{ usuario.apellido }}</a></li>
-    {% endfor %}
-</ul>
+<div class="d-flex justify-content-end mb-3">
+    <a href="{% url 'crear_usuario' %}" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> Crear Usuario
+    </a>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Email</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.apellido }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>
+                <a href="{% url 'editar_usuario' usuario.pk %}" class="btn btn-sm btn-primary">
+                    <i class="bi bi-pencil-square"></i> Editar
+                </a>
+                {% if user.is_superuser %}
+                <a href="{% url 'eliminar_usuario' usuario.pk %}" class="btn btn-sm btn-danger">
+                    <i class="bi bi-trash"></i> Eliminar
+                </a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

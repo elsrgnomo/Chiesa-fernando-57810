@@ -20,7 +20,6 @@ class UsuarioManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-
 class Usuario(AbstractBaseUser, PermissionsMixin):
     id_unico = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     email = models.EmailField(max_length=255, unique=True)
@@ -49,7 +48,6 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['nombre', 'apellido']
-
 
     def __str__(self):
         return f'{self.nombre} {self.apellido}'
@@ -80,13 +78,12 @@ class Tarea(models.Model):
 
     def __str__(self):
         return self.nombre
-    
+
 class Comentario(models.Model):
     tarea = models.ForeignKey(Tarea, related_name='comentarios', on_delete=models.CASCADE)
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     comentario = models.TextField()
     fecha = models.DateTimeField(auto_now_add=True)
-    
+
     def __str__(self):
         return f'Comentario de {self.usuario} en {self.tarea}'
-    
