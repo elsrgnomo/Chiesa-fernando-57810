@@ -21,6 +21,11 @@
             <label for="id_nombre" class="form-label text-left d-block">Nombre</label>
             <div class="text-right">
                 {{ form.nombre }}
+                {% if form.nombre.errors %}
+                    <div class="text-danger">
+                        {{ form.nombre.errors }}
+                    </div>
+                {% endif %}
             </div>
         </div>
         <div class="col-md-6">
@@ -41,6 +46,11 @@
             <label for="id_fecha_fin" class="form-label text-left d-block">Fecha Fin</label>
             <div class="text-right">
                 {{ form.fecha_fin }}
+                {% if form.fecha_fin.errors %}
+                    <div class="text-danger">
+                        {{ form.fecha_fin.errors }}
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>

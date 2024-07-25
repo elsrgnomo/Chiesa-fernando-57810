@@ -9,6 +9,12 @@ class TareaForm(forms.ModelForm):
         model = Tarea
         fields = ['nombre', 'descripcion', 'fecha_inicio', 'fecha_fin', 'prioridad', 'urgencia', 'tarea_anterior', 'tarea_posterior', 'estado', 'usuario']
 
+    def __init__(self, *args, **kwargs):
+        super(TareaForm, self).__init__(*args, **kwargs)
+        self.fields['nombre'].required = True
+        self.fields['fecha_fin'].required = True
+
+
 class ComentarioForm(forms.ModelForm):
     class Meta:
         model = Comentario
