@@ -75,7 +75,29 @@ La aplicación "Gestión de Tareas" es una herramienta web colaborativa desarrol
 
 ### Usuarios de prueba generados
 
+
+- **Nombre**:Fernando Chiesa
+- **Usuario**:infocctv.ef@gmail.com
+- **Contraseña**:milanesa
+- **Avatar**:avatar 1
+
 - **Nombre**:Valeria bera
 - **Usuario**: lavale@gmail.com
 - **Contraseña**:napolitana-> cambio a -> milanesazuiza
 - **Avatar**:avatar 3
+
+- **Nombre**:Mario correa
+- **Usuario**:Mariocorrea@gmail.com
+- **Contraseña**:olgaolga
+
+
+- **Nombre**:Damian Rossi 
+- **Usuario**:damianrossi@gmail.com
+- **Contraseña**:elsantafesino
+
+- **Nombre**:migue rio
+- **Contraseña**:santander@gmail.com
+- **Contraseña**:quebanco
+
+### Video Link
+- **Video**: https://drive.google.com/file/d/1NfQna9y0zpPCiHfDyHr5bIXDuaeLVvVI/view?usp=drive_link
