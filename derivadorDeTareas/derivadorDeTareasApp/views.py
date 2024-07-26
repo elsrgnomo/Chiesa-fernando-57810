@@ -149,6 +149,7 @@ def eliminar_usuario(request, pk):
         return redirect('lista_usuarios')
     return render(request, 'usuarios/eliminar_usuario.html', {'usuario': usuario})
 
+
 def registro(request):
     if request.method == 'POST':
         form = RegistroUsuarioForm(request.POST, request.FILES)
